@@ -17,8 +17,18 @@ export default class NewBill {
   }
   handleChangeFile = e => {
     e.preventDefault()
-    const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
-    const filePath = e.target.value.split(/\\/g)
+    
+    // BUG #3 : si l'extension n'est pas bonne, message d'erreur sous l'input, et on supprime le fichier
+    const justifInput = this.document.querySelector(`input[data-testid="file"]`);
+    const file = justifInput.files[0]
+    const fileExt = file.type.split("/")
+ 
+    if(fileExt[1] != "jpg" && fileExt[1] != "jpeg" && fileExt[1] != "png") {
+      justifInput.value = ""; // Vide l'input de son fichier
+      justifInput.parentNode.setAttribute("data-error-visible", "true"); // Fait apparaître le message d'erreur
+    } else {
+      justifInput.parentNode.setAttribute("data-error-visible", "false"); // Supprime le message d'erreur
+      const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length-1]
     const formData = new FormData()
     const email = JSON.parse(localStorage.getItem("user")).email
@@ -39,6 +49,8 @@ export default class NewBill {
         this.fileUrl = fileUrl
         this.fileName = fileName
       }).catch(error => console.error(error))
+    }
+
   }
   handleSubmit = e => {
     e.preventDefault()

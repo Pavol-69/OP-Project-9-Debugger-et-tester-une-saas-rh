@@ -61,3 +61,32 @@ textarea:focus, input:focus, select:focus {
 *[placeholder] {
   color: #0E5AE5 !important;
 }
+
+/*Résolution BUG #3, ajout d'un message d'erreur pour les fichiers pas au bon format*/
+#justif-input {
+  position: relative;
+}
+
+#justif-input[data-error]::after {
+  position: absolute;
+  font-size: 0.6em;
+  color: #e54858;
+  display: block;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+  bottom: -10px;
+}
+
+#justif-input[data-error-visible="true"]::after {
+  content: attr(data-error);
+}
+
+#justif-input[data-error-visible="true"]::after {
+  opacity: 1;
+}
+#justif-input[data-error-visible="true"] .blue-border {
+  border: 2px solid #e54858 !important;
+}
+/*Fin résolution BUG #3*/
