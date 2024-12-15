@@ -146,7 +146,11 @@ export default class {
     }
 
     bills.forEach(bill => {
-      $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+      // BUG #4 : il faut ajouter l'event uniquement aux cards dont on a appuyer sur la flèche, sinon il va se déclencher plusieurs fois
+      if(index == 1 && bill.status == "pending" ||index == 2 && bill.status == "accepted" || index == 3 && bill.status == "refused")
+        {
+          $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+        }
     })
 
     return bills
@@ -178,10 +182,12 @@ export default class {
   /* istanbul ignore next */
   updateBill = (bill) => {
     if (this.store) {
+      
     return this.store
       .bills()
       .update({data: JSON.stringify(bill), selector: bill.id})
-      .then(bill => bill)
+      .then(bill => {bill
+        location.reload()})
       .catch(console.log)
     }
   }
