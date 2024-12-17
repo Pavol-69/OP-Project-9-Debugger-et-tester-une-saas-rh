@@ -1,8 +1,7 @@
-import VerticalLayout from './VerticalLayout.js'
+import VerticalLayout from "./VerticalLayout.js";
 
 export default () => {
-
-  return (`
+  return `
     <div class='layout'>
       ${VerticalLayout(120)}
       <div class='content'>
@@ -27,7 +26,7 @@ export default () => {
                   </div>
                   <div class="col-half">
                     <label for="expense-name" class="bold-label">Nom de la dépense</label>
-                    <input type="text" class="form-control blue-border" data-testid="expense-name" placeholder="Vol Paris Londres" />
+                    <input required type="text" class="form-control blue-border" data-testid="expense-name" placeholder="Vol Paris Londres" />
                   </div>
                   <div class="col-half">
                     <label for="datepicker" class="bold-label">Date</label>
@@ -40,7 +39,7 @@ export default () => {
                   <div class="col-half-row">
                     <div class="flex-col"> 
                       <label for="vat" class="bold-label">TVA</label>
-                      <input type="number" class="form-control blue-border" data-testid="vat" placeholder="70" />
+                      <input required type="number" class="form-control blue-border" data-testid="vat" placeholder="70" />
                     </div>
                     <div class="flex-col">
                       <label for="pct" class="white-text">%</label>
@@ -70,5 +69,5 @@ export default () => {
         </div>
       </div>
     </div>
-  `)
-}
+  `;
+};
