@@ -13,6 +13,10 @@ import router from "../app/Router.js";
 
 jest.mock("../app/store", () => mockStore);
 
+beforeEach(() => {
+  document.body.innerHTML = "";
+});
+
 describe("Given I am connected as an employee and I am on NewBill Page", () => {
   describe("When I upload a document", () => {
     test("Then I should find the same fileUrl in the NewBill Object I created than the one I use as input data", async () => {
@@ -70,7 +74,27 @@ describe("Given I am connected as an employee and I am on NewBill Page", () => {
       root.setAttribute("id", "root");
       document.body.append(root);
       router();
-      window.onNavigate(ROUTES_PATH.Bills);
+      window.onNavigate(ROUTES_PATH.NewBill);
+
+      // Completion du formulaire
+      screen.getAllByTestId("expense-type").value = "Hôtel et logement";
+      screen.getAllByTestId("expense-name").value = "encore";
+      screen.getAllByTestId("datepicker").value = "2004-04-04";
+      screen.getAllByTestId("amount").value = 400;
+      screen.getAllByTestId("vat").value = "80";
+      screen.getAllByTestId("pct").value = 20;
+      screen.getAllByTestId("file").value = "80";
+      const file = new File(["toto"], "toto.jpg", {
+        type: "application/jpg",
+      });
+      userEvent.upload(screen.getByTestId("file"), file);
+
+      // On soumet notre formulaire
+      userEvent.click(screen.getByTestId("btn-send-bill"));
+
+      // On devrait donc être sur la page Bills, on doit donc pouvoir trougver le bouton Nouvelle Facture
+      await waitFor(() => screen.getByTestId("btn-new-bill"));
+      expect(screen.getByTestId("btn-new-bill")).toBeTruthy();
     });
   });
 });

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1735241523856" clover="3.2.0">
-  <project timestamp="1735241523856" name="All files">
-    <metrics statements="231" coveredstatements="202" conditionals="107" coveredconditionals="85" methods="69" coveredmethods="53" elements="407" coveredelements="340" complexity="0" loc="231" ncloc="231" packages="3" files="16" classes="16"/>
+<coverage generated="1735245612672" clover="3.2.0">
+  <project timestamp="1735245612672" name="All files">
+    <metrics statements="231" coveredstatements="211" conditionals="107" coveredconditionals="88" methods="69" coveredmethods="56" elements="407" coveredelements="355" complexity="0" loc="231" ncloc="231" packages="3" files="16" classes="16"/>
     <package name="constants">
       <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="routes.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\constants\routes.js">
         <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="6" count="6" type="stmt"/>
         <line num="13" count="6" type="stmt"/>
-        <line num="14" count="40" type="cond" truecount="5" falsecount="0"/>
-        <line num="16" count="9" type="stmt"/>
-        <line num="18" count="12" type="stmt"/>
-        <line num="20" count="6" type="stmt"/>
+        <line num="14" count="44" type="cond" truecount="5" falsecount="0"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="18" count="14" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
         <line num="22" count="12" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
       </file>
@@ -20,37 +20,37 @@
       </file>
     </package>
     <package name="containers">
-      <metrics statements="193" coveredstatements="164" conditionals="68" coveredconditionals="47" methods="53" coveredmethods="37"/>
+      <metrics statements="193" coveredstatements="173" conditionals="68" coveredconditionals="50" methods="53" coveredmethods="40"/>
       <file name="Bills.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\containers\Bills.js">
         <metrics statements="28" coveredstatements="26" conditionals="6" coveredconditionals="4" methods="8" coveredmethods="8"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="13" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="5" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="16" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="18" count="20" type="stmt"/>
-        <line num="20" count="6" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="13" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="28" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
         <line num="24" count="4" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
         <line num="31" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
-        <line num="39" count="6" type="stmt"/>
-        <line num="40" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="41" count="6" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="4" type="stmt"/>
-        <line num="47" count="4" type="stmt"/>
+        <line num="39" count="10" type="stmt"/>
+        <line num="40" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="41" count="8" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="12" type="stmt"/>
+        <line num="47" count="12" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
+        <line num="63" count="3" type="stmt"/>
+        <line num="64" count="3" type="stmt"/>
       </file>
       <file name="Dashboard.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\containers\Dashboard.js">
         <metrics statements="73" coveredstatements="70" conditionals="49" coveredconditionals="41" methods="24" coveredmethods="19"/>
@@ -130,17 +130,17 @@
       </file>
       <file name="Login.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\containers\Login.js">
         <metrics statements="41" coveredstatements="30" conditionals="4" coveredconditionals="0" methods="11" coveredmethods="5"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="27" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
@@ -150,7 +150,7 @@
         <line num="43" count="2" type="stmt"/>
         <line num="44" count="2" type="stmt"/>
         <line num="45" count="2" type="stmt"/>
-        <line num="49" count="4" type="stmt"/>
+        <line num="49" count="5" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
         <line num="51" count="2" type="stmt"/>
         <line num="60" count="2" type="stmt"/>
@@ -160,12 +160,12 @@
         <line num="65" count="2" type="stmt"/>
         <line num="66" count="2" type="stmt"/>
         <line num="67" count="2" type="stmt"/>
-        <line num="72" count="4" type="stmt"/>
+        <line num="72" count="5" type="stmt"/>
         <line num="73" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="74" count="0" type="stmt"/>
         <line num="82" count="0" type="stmt"/>
         <line num="85" count="0" type="stmt"/>
-        <line num="90" count="4" type="stmt"/>
+        <line num="90" count="5" type="stmt"/>
         <line num="91" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="92" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
@@ -174,59 +174,59 @@
       </file>
       <file name="Logout.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\containers\Logout.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="5" count="26" type="stmt"/>
-        <line num="6" count="26" type="stmt"/>
-        <line num="7" count="26" type="stmt"/>
-        <line num="8" count="26" type="stmt"/>
-        <line num="11" count="26" type="stmt"/>
+        <line num="5" count="31" type="stmt"/>
+        <line num="6" count="31" type="stmt"/>
+        <line num="7" count="31" type="stmt"/>
+        <line num="8" count="31" type="stmt"/>
+        <line num="11" count="31" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
       </file>
       <file name="NewBill.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\containers\NewBill.js">
-        <metrics statements="44" coveredstatements="31" conditionals="9" coveredconditionals="2" methods="8" coveredmethods="3"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="30" count="1" type="cond" truecount="2" falsecount="3"/>
+        <metrics statements="44" coveredstatements="40" conditionals="9" coveredconditionals="5" methods="8" coveredmethods="6"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="30" count="2" type="cond" truecount="2" falsecount="3"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="59" count="5" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="89" count="5" type="stmt"/>
-        <line num="90" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="91" count="0" type="stmt"/>
-        <line num="95" count="0" type="stmt"/>
+        <line num="59" count="6" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="89" count="6" type="stmt"/>
+        <line num="90" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
         <line num="97" count="0" type="stmt"/>
       </file>
     </package>
@@ -234,22 +234,22 @@
       <metrics statements="30" coveredstatements="30" conditionals="34" coveredconditionals="33" methods="15" coveredmethods="15"/>
       <file name="Actions.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\views\Actions.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="6" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
       </file>
       <file name="BillsUI.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\views\BillsUI.js">
         <metrics statements="12" coveredstatements="12" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="6"/>
         <line num="7" count="6" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
         <line num="22" count="6" type="stmt"/>
-        <line num="24" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="25" count="4" type="cond" truecount="4" falsecount="0"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="34" count="13" type="stmt"/>
-        <line num="51" count="13" type="cond" truecount="2" falsecount="0"/>
-        <line num="52" count="5" type="stmt"/>
-        <line num="53" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="28" count="12" type="stmt"/>
+        <line num="34" count="17" type="stmt"/>
+        <line num="51" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="7" type="stmt"/>
+        <line num="53" count="10" type="cond" truecount="2" falsecount="0"/>
         <line num="54" count="4" type="stmt"/>
-        <line num="57" count="4" type="stmt"/>
+        <line num="57" count="6" type="stmt"/>
       </file>
       <file name="DashboardFormUI.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\views\DashboardFormUI.js">
         <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
@@ -270,23 +270,23 @@
       </file>
       <file name="LoadingPage.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\views\LoadingPage.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="12" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
       </file>
       <file name="LoginUI.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\views\LoginUI.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="16" type="stmt"/>
+        <line num="4" count="17" type="stmt"/>
       </file>
       <file name="NewBillUI.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\views\NewBillUI.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="7" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
       </file>
       <file name="VerticalLayout.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\views\VerticalLayout.js">
         <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="7" count="45" type="stmt"/>
-        <line num="8" count="45" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="32" type="stmt"/>
-        <line num="11" count="45" type="cond" truecount="4" falsecount="0"/>
-        <line num="12" count="16" type="stmt"/>
+        <line num="7" count="50" type="stmt"/>
+        <line num="8" count="50" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="37" type="stmt"/>
+        <line num="11" count="50" type="cond" truecount="4" falsecount="0"/>
+        <line num="12" count="21" type="stmt"/>
         <line num="29" count="29" type="stmt"/>
       </file>
     </package>
