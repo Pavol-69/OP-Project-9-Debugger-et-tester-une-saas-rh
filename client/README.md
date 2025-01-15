@@ -91,8 +91,8 @@ Vous pouvez vous connecter en utilisant les comptes:
 ### administrateur :
 
 ```
-utilisateur :
-mot de passe : adminadmin@test.tld
+utilisateur : admin
+mot de passe : admin@test.tld
 ```
 
 ### employé :

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { screen, waitFor } from "@testing-library/dom";
+import { screen, waitFor, fireEvent } from "@testing-library/dom";
 import NewBillUI from "../views/NewBillUI.js";
 import NewBill from "../containers/NewBill.js";
 import mockStore from "../__mocks__/store.js";
@@ -68,6 +68,7 @@ describe("Given I am connected as an employee and I am on NewBill Page", () => {
         "user",
         JSON.stringify({
           type: "Employee",
+          email: "email@email.fr",
         })
       );
       const root = document.createElement("div");
@@ -76,18 +77,37 @@ describe("Given I am connected as an employee and I am on NewBill Page", () => {
       router();
       window.onNavigate(ROUTES_PATH.NewBill);
 
+      // PAS BESOIN DE FAIRE LE TEST POUR L'UPLOAD, ON L'A DEJA FAIT JUSTE AU DESSUS
       // Completion du formulaire
-      screen.getAllByTestId("expense-type").value = "Hôtel et logement";
-      screen.getAllByTestId("expense-name").value = "encore";
-      screen.getAllByTestId("datepicker").value = "2004-04-04";
-      screen.getAllByTestId("amount").value = 400;
-      screen.getAllByTestId("vat").value = "80";
-      screen.getAllByTestId("pct").value = 20;
-      screen.getAllByTestId("file").value = "80";
+      /*const inputType = screen.getByTestId("expense-type");
+      fireEvent.change(inputType, { target: { value: "Hôtel et logement" } });
+      expect(inputType.value).toEqual("Hôtel et logement");
+
+      const inputName = screen.getByTestId("expense-name");
+      fireEvent.change(inputName, { target: { value: "encore" } });
+      expect(inputName.value).toEqual("encore");
+
+      screen.getByTestId("expense-name").value = "encore";
+      expect(screen.getByTestId("expense-name").value).toEqual("encore");
+
+      screen.getByTestId("datepicker").value = "2004-04-04";
+      expect(screen.getByTestId("datepicker").value).toEqual("2004-04-04");
+
+      screen.getByTestId("amount").value = 400;
+      expect(screen.getByTestId("amount").value).toEqual("400");
+
+      screen.getByTestId("vat").value = "80";
+      expect(screen.getByTestId("vat").value).toEqual("80");
+
+      screen.getByTestId("pct").value = 20;
+      expect(screen.getByTestId("pct").value).toEqual("20");
+
       const file = new File(["toto"], "toto.jpg", {
         type: "application/jpg",
       });
       userEvent.upload(screen.getByTestId("file"), file);
+      const myResult = await mockStore.bills().create();
+      expect(newBill.fileUrl).toEqual(myResult.fileUrl);*/
 
       // On soumet notre formulaire
       userEvent.click(screen.getByTestId("btn-send-bill"));

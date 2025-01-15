@@ -70,6 +70,10 @@ export default () => {
         .catch((error) => {
           rootDiv.innerHTML = ROUTES({ pathname, error });
         });
+    } else {
+      const error = "toto";
+      console.log(error);
+      rootDiv.innerHTML = ROUTES({ pathname, error });
     }
   };
 

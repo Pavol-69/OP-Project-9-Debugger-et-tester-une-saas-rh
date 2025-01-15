@@ -8,14 +8,14 @@ import BillsUI from "../views/BillsUI.js";
 import { bills } from "../fixtures/bills.js";
 import { ROUTES, ROUTES_PATH } from "../constants/routes.js";
 import { localStorageMock } from "../__mocks__/localStorage.js";
+import mockStore from "../__mocks__/store.js";
 import userEvent from "@testing-library/user-event";
 import router from "../app/Router.js";
 import Bills from "../containers/Bills.js";
-import mockStore from "../__mocks__/store.js";
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on Bills Page", () => {
-    test("Then bill icon in vertical layout should be highlighted", async () => {
+    beforeEach(() => {
       Object.defineProperty(window, "localStorage", {
         value: localStorageMock,
       });
@@ -29,6 +29,9 @@ describe("Given I am connected as an employee", () => {
       root.setAttribute("id", "root");
       document.body.append(root);
       router();
+    });
+
+    test("Then bill icon in vertical layout should be highlighted", async () => {
       window.onNavigate(ROUTES_PATH.Bills);
       await waitFor(() => screen.getByTestId("icon-window"));
       const windowIcon = screen.getByTestId("icon-window");
@@ -49,51 +52,20 @@ describe("Given I am connected as an employee", () => {
     });
 
     /*Completion du test d'intégration pour augmenter le coverage*/
-    test("modalForm should appear when we click on the eye button", () => {
-      // La fonction modal, venant de Bootstrap, ne peut pas être comprise par jest, qui n'a pas importé la bonne librairie
-      // L'astuce est donc de mock la fonction modal, en la remplaçant par une fonction qui fait exactement la même chose
-      $.fn.modal = jest.fn(() => {
-        screen.getByTestId("dialog").className += " show";
-      });
+    test("Then modalForm should appear when we click on the eye button", () => {
+      // Mock de la fonction modal, que les tests ne peuvent pas connaître
+      $.fn.modal = jest.fn();
 
-      // Recréation du contexte
-      Object.defineProperty(window, "localStorage", {
-        value: localStorageMock,
-      });
-      window.localStorage.setItem(
-        "user",
-        JSON.stringify({
-          type: "Employee",
-        })
-      );
-      const root = document.createElement("div");
-      root.setAttribute("id", "root");
-      document.body.append(root);
-      router();
       window.onNavigate(ROUTES_PATH.Bills);
 
       // Simulation d'un click sur le bouton avec l'icône d'oeil
       userEvent.click(screen.getAllByTestId("icon-eye")[0]);
 
-      // La modal doit alors s'afficher, avec la class show
-      expect(screen.getByTestId("dialog")).toHaveClass("show");
+      // La modal a dû être appelée
+      expect($.fn.modal).toHaveBeenCalled();
     });
 
-    test("should see NewBill page when we click on the newBill button", () => {
-      // Recréation du contexte
-      Object.defineProperty(window, "localStorage", {
-        value: localStorageMock,
-      });
-      window.localStorage.setItem(
-        "user",
-        JSON.stringify({
-          type: "Employee",
-        })
-      );
-      const root = document.createElement("div");
-      root.setAttribute("id", "root");
-      document.body.append(root);
-      router();
+    test("Then I should see NewBill page when we click on the newBill button", () => {
       window.onNavigate(ROUTES_PATH.Bills);
 
       // Simulation du click sur Nouvelle facture
@@ -103,17 +75,14 @@ describe("Given I am connected as an employee", () => {
       expect(screen.getByTestId("form-new-bill")).toBeTruthy();
     });
 
-    test("should get same bills with store.getBills & bills", async () => {
+    test("Then I should get same bills with mockStore.getBills & bills data", async () => {
       // Recréation du contexte
-      Object.defineProperty(window, "localStorage", {
-        value: localStorageMock,
-      });
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname });
       };
 
       // On crée un élément Bills, qui devrait contenir la fonction getBills, que l'on souhaite tester ici
-      let myBills = new Bills({
+      const myBills = new Bills({
         document,
         onNavigate,
         store: mockStore,
@@ -121,7 +90,7 @@ describe("Given I am connected as an employee", () => {
       });
 
       // Appel de la fonction getBills, et sauvegarde du résultat
-      myBills = await myBills.getBills().then((bills) => {
+      const getBillsResult = await myBills.getBills().then((bills) => {
         return bills;
       });
 
@@ -129,11 +98,52 @@ describe("Given I am connected as an employee", () => {
       // On parcourt donc tous les éléments de bills, et on voit si on trouve toutes les id dans myBills
       let myBool = true;
       bills.forEach((bill) => {
-        if (myBills.filter((myBill) => myBill.id == bill.id).length < 1) {
+        if (
+          getBillsResult.filter(
+            (billFromGetBills) => billFromGetBills.id == bill.id
+          ).length < 1
+        ) {
           myBool = false;
         }
       });
       expect(myBool).toEqual(true);
+    });
+  });
+  describe("When we fetch API and fail with an error message (like 404 or 500 error)", () => {
+    test("Then we should be on Error Page with the error message displayed", async () => {
+      // Recréation du contexte
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname });
+      };
+
+      const errorMsg = "Erreur 404/500";
+
+      // Mock de bills pour être sûr qu'une erreur soit renvoyée
+      const mockError = {
+        bills: jest.fn(() => ({
+          list: jest.fn().mockRejectedValue(new Error("Erreur 404/500")),
+        })),
+      };
+
+      // On crée un élément Bills, qui devrait nous renvoyer l'erreur 404 dès qu'on essaye d'accéder à une bill
+      const myBills = new Bills({
+        document,
+        onNavigate,
+        store: mockError,
+        localStorage,
+      });
+
+      let myError = "";
+
+      try {
+        await myBills.getBills();
+      } catch (error) {
+        myError = error.message;
+      }
+
+      // Si on appelle BillsUI avec notre erreur, on doit être sur la page Erreur, avec le message Erreur 404
+      document.body.innerHTML = BillsUI({ error: myError });
+      expect(screen.getByTestId("error-message").innerHTML).toEqual(errorMsg);
     });
   });
 });
