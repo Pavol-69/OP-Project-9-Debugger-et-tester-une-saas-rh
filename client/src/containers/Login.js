@@ -70,6 +70,7 @@ export default class Login {
 
   // not need to cover this function by tests
   login = (user) => {
+    console.log("toto");
     if (this.store) {
       return this.store
         .login(

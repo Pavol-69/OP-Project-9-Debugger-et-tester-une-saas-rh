@@ -84,7 +84,13 @@ describe("Given that I am a user on login page", () => {
 
       let PREVIOUS_LOCATION = "";
 
-      const store = jest.fn();
+      // Pour passer les tests login au dessus de 80%, on a besoin de couvrir les lignes 73-86
+      // => Cela correspond à la fonction login, qui utilise store.login que l'on décrit ci-dessus (consiste simplement à renvoyer un token)
+      const store = {
+        login() {
+          return Promise.resolve("jwtoken");
+        },
+      };
 
       const login = new Login({
         document,
@@ -95,7 +101,7 @@ describe("Given that I am a user on login page", () => {
       });
 
       const handleSubmit = jest.fn(login.handleSubmitEmployee);
-      login.login = jest.fn().mockResolvedValue({});
+      //login.login = jest.fn().mockResolvedValue({}); // Ligne à supprimer pour tester la fonciton login des lignes 73-86
       form.addEventListener("submit", handleSubmit);
       fireEvent.submit(form);
       expect(handleSubmit).toHaveBeenCalled();

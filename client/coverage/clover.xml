@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736973973718" clover="3.2.0">
-  <project timestamp="1736973973718" name="All files">
-    <metrics statements="230" coveredstatements="210" conditionals="107" coveredconditionals="88" methods="69" coveredmethods="56" elements="406" coveredelements="354" complexity="0" loc="230" ncloc="230" packages="3" files="16" classes="16"/>
+<coverage generated="1742330854984" clover="3.2.0">
+  <project timestamp="1742330854984" name="All files">
+    <metrics statements="231" coveredstatements="214" conditionals="107" coveredconditionals="89" methods="69" coveredmethods="58" elements="407" coveredelements="361" complexity="0" loc="231" ncloc="231" packages="3" files="16" classes="16"/>
     <package name="constants">
       <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="routes.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\constants\routes.js">
@@ -20,7 +20,7 @@
       </file>
     </package>
     <package name="containers">
-      <metrics statements="192" coveredstatements="172" conditionals="68" coveredconditionals="50" methods="53" coveredmethods="40"/>
+      <metrics statements="193" coveredstatements="176" conditionals="68" coveredconditionals="51" methods="53" coveredmethods="42"/>
       <file name="Bills.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\containers\Bills.js">
         <metrics statements="28" coveredstatements="26" conditionals="6" coveredconditionals="4" methods="8" coveredmethods="8"/>
         <line num="7" count="12" type="stmt"/>
@@ -129,7 +129,7 @@
         <line num="176" count="2" type="stmt"/>
       </file>
       <file name="Login.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\containers\Login.js">
-        <metrics statements="41" coveredstatements="30" conditionals="4" coveredconditionals="0" methods="11" coveredmethods="5"/>
+        <metrics statements="42" coveredstatements="34" conditionals="4" coveredconditionals="1" methods="11" coveredmethods="7"/>
         <line num="2" count="4" type="stmt"/>
         <line num="13" count="5" type="stmt"/>
         <line num="14" count="5" type="stmt"/>
@@ -161,16 +161,17 @@
         <line num="66" count="2" type="stmt"/>
         <line num="67" count="2" type="stmt"/>
         <line num="72" count="5" type="stmt"/>
-        <line num="73" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="82" count="0" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="90" count="5" type="stmt"/>
-        <line num="91" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="92" count="0" type="stmt"/>
-        <line num="103" count="0" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="74" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="83" count="2" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="91" count="5" type="stmt"/>
+        <line num="92" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="93" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
-        <line num="107" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
       </file>
       <file name="Logout.js" path="D:\DevWeb\open-classrooms\OP-Project-9-Debugger-et-tester-une-saas-rh\client\src\containers\Logout.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
